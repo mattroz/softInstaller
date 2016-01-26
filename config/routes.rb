@@ -1,4 +1,10 @@
 Rails.application.routes.draw do
+  get 'company/new'
+
+  get 'company/edit'
+
+  get 'company/delete'
+
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 

@@ -1,9 +1,26 @@
 Rails.application.routes.draw do
+  get 'software/rails'
+
+  get 'software/generate'
+
+  get 'software/controller'
+
+  get 'software/Software'
+
+  resources :company
+
   get 'company/new'
 
   get 'company/edit'
 
   get 'company/delete'
+
+
+  resources :employee
+  resources :profile
+  resources :software
+
+  root ''
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".

@@ -1,13 +1,10 @@
 class SoftwareController < ApplicationController
-  def rails
+  def new
   end
 
-  def generate
+  def edit
   end
 
-  def controller
-  end
-
-  def Software
+  def delete
   end
 end

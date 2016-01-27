@@ -1,4 +1,10 @@
 Rails.application.routes.draw do
+  get 'software/new'
+
+  get 'software/edit'
+
+  get 'software/delete'
+
   get 'software/rails'
 
   get 'software/generate'

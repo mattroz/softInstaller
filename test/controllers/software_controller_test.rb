@@ -1,23 +1,18 @@
 require 'test_helper'
 
 class SoftwareControllerTest < ActionController::TestCase
-  test "should get rails" do
-    get :rails
+  test "should get new" do
+    get :new
     assert_response :success
   end
 
-  test "should get generate" do
-    get :generate
+  test "should get edit" do
+    get :edit
     assert_response :success
   end
 
-  test "should get controller" do
-    get :controller
-    assert_response :success
-  end
-
-  test "should get Software" do
-    get :Software
+  test "should get delete" do
+    get :delete
     assert_response :success
   end
 

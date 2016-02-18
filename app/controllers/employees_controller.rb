@@ -11,8 +11,8 @@ class EmployeesController < ApplicationController
 	end
 
 	def index
-		if employee_signed_in?
-			redirect_to edit_employee_path(current_employee)
-		end 
+#		if employee_signed_in?
+#			redirect_to root_path
+#		end 
 	end
 end

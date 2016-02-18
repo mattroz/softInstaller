@@ -30,83 +30,101 @@
 <% end %>
 -->
 
-<div class="container" style="margin-top:30px">
-<div class="col-md-10 col-md-offset-1">
-    <div class="panel panel-default">
-  <div class="panel-heading"><h3 class="panel-title"><strong>Sign up </strong></h3>
-      <div style="float:right; font-size: 80%; position: relative; top:-10px"><a href="#">Forgot password?</a></div>
-  </div>
-  
-  <div class="panel-body">
-   <form role="form">
-   <div class="alert alert-danger">
-      <a class="close" data-dismiss="alert" href="#">×</a>Incorrect Username or Password!
-    </div>
-    <div class="row">
-        <div class="col-xs-12 col-sm-4 col-md-4">
-        <div class="form-group">
-                      <input type="text" name="first_name" id="first_name" class="form-control" placeholder="First Name" tabindex="1">
-        </div>
-      </div>
-              <div class="col-xs-12 col-sm-4 col-md-4">
-          <div class="form-group">
-                      <input type="text" name="middle_name" id="middle_name" class="form-control" placeholder="Middle Name" tabindex="1">
-        </div>
-      </div>
-      <div class="col-xs-12 col-sm-4 col-md-4">
-        <div class="form-group">
-          <input type="text" name="last_name" id="last_name" class="form-control " placeholder="Last Name" tabindex="2">
-        </div>
-      </div>
-    </div>
-    <div class="form-group">
-      <input type="text" name="display_name" id="display_name" class="form-control " placeholder="Display Name" tabindex="3">
-    </div>
-    <div class="form-group">
-      <input type="email" name="email" id="email" class="form-control " placeholder="Email Address" tabindex="4">
-    </div>
-    <div class="row">
-      <div class="col-xs-12 col-sm-6 col-md-6">
-        <div class="form-group">
-          <input type="password" name="password" id="password" class="form-control " placeholder="Password" tabindex="5">
-        </div>
-      </div>
-      <div class="col-xs-12 col-sm-6 col-md-6">
-        <div class="form-group">
-          <input type="password" name="password_confirmation" id="password_confirmation" class="form-control " placeholder="Confirm Password" tabindex="6">
-        </div>
-      </div>
-    </div>
-                                  
-                                  <div class="input-group">
-                                    <div class="checkbox" style="margin-top: 0px;">
-                                      <label>
-                                        <input id="login-remember" type="checkbox" name="remember" value="1"> Remember me
-                                      </label>
-                                    </div>
-                                  </div>
-                                  
-<button type="submit" class="btn btn-success">Sign in</button>
+<body background="./images/pattern2.jpg"> 
+<link href="//maxcdn.bootstrapcdn.com/font-awesome/4.1.0/css/font-awesome.min.css" rel="stylesheet">
 
-<hr style="margin-top:10px;margin-bottom:10px;" >
+    <div id="login-overlay" class="modal-dialog">
+      <div class="modal-content"> 
+          <div class="modal-header">
+              <h4 class="modal-title" id="myModalLabel">Registration form</h4>
+            </div>
+          
+            <div class="modal-body">
+              
+            
+                <!-- <form id="registerForm" method="POST" > -->
+                <%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
+                
+               <div class="form-group">
+                  <div class="col-xs-6">
+                  <label for="InputName">First Name</label>
+                     <div class="input-group">
+                        <%= f.text_field :name, autofocus: true, class: "form-control", placeholder: "Enter First Name" %>
+                        <span class="input-group-addon"><span class="glyphicon glyphicon-asterisk"></span></span>
+                     </div>
+                     <hr>
+                  </div>
+               </div>
+               
+               <div class="form-group">
+                  <div class="col-xs-6">
+                     <label for="InputSurname">Last Name</label>
+                     <div class="input-group">
+                        <!-- <input type="text" class="form-control" name="last_name" placeholder="Enter Last Name" required> -->
+                        <%= f.text_field :surname, class: "form-control", placeholder: "Enter Last Name" %>
+                        <span class="input-group-addon"><span class="glyphicon glyphicon-asterisk"></span></span>
+                     </div>
+      <!--separator--> <hr>
+                  </div>       
+               </div> 
+                
+               <div class="form-group"> 
+                  <div class="col-xs-12">
+                     <label for="InputEmail">Enter Email</label>
+                     <div class="input-group">
+                        <%= f.email_field :email, class: "form-control", placeholder: "Enter Email" %>
+                     <span class="input-group-addon"><span class="glyphicon glyphicon-asterisk"></span></span>
+                     </div>
+                     <br> 
+                  </div>
+               </div>
+                     
+               <div class="form-group">
+                  <div class="col-xs-12">
+                     <label for="InputPassword">Enter Password <em>(<%= @minimum_password_length %> characters minimum)</em></label>
+                     <div class="input-group">
+                        <%= f.password_field :password, autocomplete: "off", class: "form-control", placeholder: "Enter Password" %>
+                        <span class="input-group-addon"><span class="glyphicon glyphicon-asterisk"></span></span>
+                     </div>
+                     <br> 
+                  </div>   
+               </div>
 
-<div class="form-group">
-                                  
-                                      <div style="font-size:85%">
-                                          Don't have an account! 
-                                      <a href="#" onClick="$('#loginbox').hide(); $('#signupbox').show()">
-                                          Sign Up Here
-                                      </a>
-                                      </div>
-                                  
-                              </div> 
-</form>
-</div>
-</div>
-</div>
-</div>
+               <div class="form-group">
+                  <div class="col-xs-12">
+                     <label for="PasswordConfirmation">Password Confirmation</label>
+                     <div class="input-group">
+                        <%= f.password_field :password_confirmation, autocomplete: "off", class: "form-control", placeholder: "Confirm your password" %>
+                        <span class="input-group-addon"><span class="glyphicon glyphicon-asterisk"></span></span>
+                     </div>
+                     <!--break--> <br> 
+                  </div>                     
+               </div>
+
+               <div class="col-md-12 text-center">
+                  <%= f.submit "Sign up" , class: "btn btn-success"%>
+                  <br>
+               </div>
+
+               <div class="form-group">
+                  <div style="font-size:85%">
+                     Already have an account? 
+                     <%= link_to "Sign In Here", new_employee_session_path %>
+                     </a>
+                  </div>
+               </div> 
+
+               <% end %>
+
+              </div> <!---modal-body-->
+          </div>
+       </div>
 
 
-<%= render "devise/shared/links" %>
+<script type="text/javascript">
+</script>
+
+</body>
+
 
 <%= render "layouts/footer" %>

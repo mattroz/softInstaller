@@ -1,12 +1,20 @@
 Rails.application.routes.draw do
-  devise_for :companies
-  
-  root 'companies#index'
+  devise_for :employees
+    
+  root 'employees#index'
 
   resources :companies
   resources :employees
   resources :profiles
   resources :software
+
+
+  #set sign up default page
+  as :employee do
+    get 'sign_in' => 'employee#new'#, :as => :new_company_session
+    #post 'signin' => 'devise/sessions#create', :as => :user_session
+    #delete 'signout' => 'devise/sessions#destroy', :as => :destroy_user_session
+  end
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".

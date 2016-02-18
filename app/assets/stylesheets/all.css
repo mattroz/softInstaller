@@ -80,6 +80,10 @@ p {
 }
 
 
+#login-overlay{
+  margin-top: 8em;
+}
+
 #header {
   position: fixed;
   top: 0;

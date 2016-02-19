@@ -1,6 +1,6 @@
 <%= render 'layouts/header' %>
 
-<!--
+<!-- 
 <h2>Sign up</h2>
 
 <%= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
@@ -28,7 +28,8 @@
     <%= f.submit "Sign up" %>
   </div>
 <% end %>
--->
+ -->
+
 
 <body background="./images/pattern2.jpg"> 
 <link href="//maxcdn.bootstrapcdn.com/font-awesome/4.1.0/css/font-awesome.min.css" rel="stylesheet">
@@ -40,10 +41,8 @@
             </div>
           
             <div class="modal-body">
-              
-            
-                <!-- <form id="registerForm" method="POST" > -->
-                <%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
+
+               <%= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
                 
                <div class="form-group">
                   <div class="col-xs-6">
@@ -60,11 +59,11 @@
                   <div class="col-xs-6">
                      <label for="InputSurname">Last Name</label>
                      <div class="input-group">
-                        <!-- <input type="text" class="form-control" name="last_name" placeholder="Enter Last Name" required> -->
+                       
                         <%= f.text_field :surname, class: "form-control", placeholder: "Enter Last Name" %>
                         <span class="input-group-addon"><span class="glyphicon glyphicon-asterisk"></span></span>
                      </div>
-      <!--separator--> <hr>
+                   <hr>
                   </div>       
                </div> 
                 
@@ -101,22 +100,25 @@
                   </div>                     
                </div>
 
-               <div class="col-md-12 text-center">
+              <div class="col-md-12 text-center">
                   <%= f.submit "Sign up" , class: "btn btn-success"%>
                   <br>
-               </div>
+               </div> 
+
+               <!-- <div class="actions">
+                  <%= f.submit "Sign up" %>
+               </div> -->
 
                <div class="form-group">
                   <div style="font-size:85%">
                      Already have an account? 
                      <%= link_to "Sign In Here", new_employee_session_path %>
-                     </a>
                   </div>
                </div> 
 
                <% end %>
 
-              </div> <!---modal-body-->
+              </div> 
           </div>
        </div>
 
@@ -124,7 +126,7 @@
 <script type="text/javascript">
 </script>
 
-</body>
+</body> 
 
 
 <%= render "layouts/footer" %>

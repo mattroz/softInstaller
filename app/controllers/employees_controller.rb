@@ -11,8 +11,8 @@ class EmployeesController < ApplicationController
 	end
 
 	def index
-#		if employee_signed_in?
-#			redirect_to root_path
-#		end 
+	end
+
+	def welcome
 	end
 end

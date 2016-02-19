@@ -1,14 +1,13 @@
 Rails.application.routes.draw do
   devise_for :employees
     
-  root 'employees#index'
+  root 'employees#welcome'
 
   resources :companies
   resources :employees
   resources :profiles
   resources :software
-
-
+  
   #set sign up default page
   #as :employee do
     #get 'sign_in' => 'employee#new'#, :as => :new_company_session

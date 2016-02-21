@@ -1,7 +1,9 @@
 Rails.application.routes.draw do
+  get 'welcome/index'
+
   devise_for :employees
     
-  root 'employees#welcome'
+  root 'welcome#index'
 
   resources :companies
   resources :employees

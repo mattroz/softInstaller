@@ -15,4 +15,8 @@ class EmployeesController < ApplicationController
 
 	def welcome
 	end
+
+	def user_params
+    	params.require(:employee).permit(:name, :surname, :email, :password, :password_confirmation, :remember_me)
+  	end
 end

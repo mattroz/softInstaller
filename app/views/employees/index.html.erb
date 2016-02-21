@@ -19,6 +19,7 @@
 
 	<div class = "container">
 		<h2>Greetings, <%= current_employee.name %> <%= current_employee.surname %></h2>
+		<button class="btn btn-success"><%= link_to "Log out", destroy_employee_session_path, :method => :delete %></button>
 	</div>
 
 	<%= render 'layouts/footer' %>
